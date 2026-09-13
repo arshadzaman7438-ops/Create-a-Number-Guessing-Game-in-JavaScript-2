@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+</head>
+
+<body>
+
+    <script>
+        // Generate a random number between 1 and 10
+        let randomNumber = Math.floor(Math.random() * 10) + 1;
+
+        // Give the user 3 attempts
+        for (let attempt = 1; attempt <= 3; attempt++) {
+
+            // Ask the user to guess
+            let guess = Number(prompt("Guess a number between 1 and 10:"));
+
+            // Check the guess
+            if (guess === randomNumber) {
+                alert("🎉 You guessed it!");
+                break;
+            }
+            else if (guess > randomNumber) {
+                alert("Too high!");
+            }
+            else {
+                alert("Too low!");
+            }
+
+            // After 3 wrong attempts, show the correct number
+            if (attempt === 3) {
+                alert("The correct number was " + randomNumber);
+            }
+        }
+    </script>
+
+</body>
+</html>
